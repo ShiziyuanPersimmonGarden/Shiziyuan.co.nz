@@ -2,87 +2,171 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Shiziyuan Persimmon Garden</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --main: #f4a261;
+      --accent: #2a9d8f;
+      --dark: #264653;
+      --light-bg: #fdf8f2;
+      --white: #fff;
+    }
+
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       font-family: 'Quicksand', sans-serif;
-      background-color: #fdf8f2;
-      color: #333;
+      background-color: var(--light-bg);
+      color: var(--dark);
     }
+
     header {
-      background-color: #f4a261;
-      padding: 1rem;
+      background-color: var(--main);
+      padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
       position: sticky;
       top: 0;
-      z-index: 1000;
+      z-index: 999;
     }
+
     nav ul {
       list-style: none;
+      display: flex;
+      gap: 1.5rem;
       margin: 0;
       padding: 0;
-      display: flex;
-      gap: 1rem;
     }
-    nav ul li {
-      position: relative;
-    }
-    nav ul li a {
+
+    nav a {
       text-decoration: none;
       color: white;
       font-weight: 600;
+      transition: color 0.3s;
     }
-    section {
+
+    nav a:hover {
+      color: var(--dark);
+    }
+
+    .hero {
+      background-image: url('https://www.istockphoto.com/photo/persimmons-in-persimmon-orchard-on-sunny-day-gm1216968456-354951872');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 6rem 2rem;
+      text-align: center;
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      text-shadow: 1px 1px 3px #00000055;
+    }
+
+    .section {
       padding: 4rem 2rem;
-      max-width: 900px;
+      max-width: 960px;
       margin: auto;
     }
-    h1, h2 {
-      color: #264653;
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: var(--dark);
     }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+    }
+
+    li {
+      margin-bottom: 0.75rem;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+
     .gallery img {
       width: 100%;
-      max-width: 300px;
-      margin: 10px;
-      border-radius: 10px;
+      max-width: 280px;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
+
     .contact-info a {
-      display: block;
+      display: inline-block;
       margin-bottom: 0.5rem;
+      color: var(--accent);
+      font-weight: 600;
     }
+
     form {
       margin-top: 2rem;
     }
+
     input, textarea {
       width: 100%;
-      padding: 0.5rem;
-      margin: 0.5rem 0;
-      border-radius: 5px;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
       border: 1px solid #ccc;
-      font-family: 'Quicksand', sans-serif;
-    }
-    button {
-      background-color: #2a9d8f;
-      color: white;
-      border: none;
-      padding: 0.7rem 1.5rem;
+      border-radius: 8px;
       font-size: 1rem;
-      border-radius: 5px;
-      cursor: pointer;
     }
+
+    button {
+      background-color: var(--accent);
+      color: white;
+      padding: 0.75rem 2rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
     button:hover {
       background-color: #21867a;
+    }
+
+    iframe {
+      width: 100%;
+      height: 300px;
+      border: none;
+      margin-top: 2rem;
+      border-radius: 12px;
+    }
+
+    @media (max-width: 600px) {
+      nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .hero h2 {
+        font-size: 2rem;
+      }
     }
   </style>
 </head>
 <body>
+
   <header>
     <h1 style="color: white; margin: 0;">Shiziyuan</h1>
     <nav>
@@ -96,52 +180,57 @@
     </nav>
   </header>
 
-  <section id="home">
+  <section id="home" class="hero">
     <h2>Welcome to Shiziyuan Persimmon Garden</h2>
-    <p>We’re excited to welcome you to our official website! Persimmon picking begins on April 25th, 2025—come and enjoy a peaceful day out in nature with your family and friends.</p>
+    <p>Persimmon picking starts April 25th, 2025 – bring your friends and family for a wholesome day on the orchard!</p>
   </section>
 
-  <section id="about">
+  <section id="about" class="section">
     <h2>About Our Garden</h2>
-    <p>Nestled in the heart of Helensville, New Zealand, our Persimmon Garden on Rimmer Road offers a peaceful slice of countryside charm. Opening for the season on April 25th, the garden is a serene escape where nature and simplicity come together.</p>
-    <p>As you wander the property, you’ll find friendly ducks, cows, chickens, and even doves—creating a truly wholesome atmosphere. For those wanting a closer look, guided tours are available upon request.</p>
+    <p>Nestled in the countryside of Helensville, New Zealand, Shiziyuan offers a relaxing escape into nature. Our orchard is home to friendly animals, seasonal fruit, and peaceful scenery—perfect for all ages.</p>
+    <p>From curious ducks to calm cows and gentle doves, our farm family loves to meet visitors. Guided tours are available by request!</p>
   </section>
 
-  <section id="services">
+  <section id="services" class="section">
     <h2>Our Services</h2>
     <ul>
-      <li><strong>Persimmon Picking:</strong> Pick fresh persimmons straight from the tree and take home nature’s sweet bounty.</li>
-      <li><strong>Animal Encounters:</strong> Get to know our farm animals including ducks, cows, chickens, and doves.</li>
-      <li><strong>Guided Tours:</strong> Explore the orchard and learn about our land with a guided walk (on request).</li>
-      <li><strong>Picnic Spaces:</strong> Enjoy a family picnic in a peaceful natural setting.</li>
+      <li><strong>Persimmon Picking:</strong> Fresh, sun-ripened persimmons straight from the tree.</li>
+      <li><strong>Animal Encounters:</strong> Visit our ducks, cows, chickens, and doves.</li>
+      <li><strong>Guided Tours:</strong> Learn more about the land with a guided walk (on request).</li>
+      <li><strong>Picnic Areas:</strong> Bring lunch and relax among the trees.</li>
     </ul>
   </section>
 
-  <section id="gallery">
+  <section id="gallery" class="section">
     <h2>Gallery</h2>
     <div class="gallery">
-      <img src="https://www.dreamstime.com/stock-photo-persimmons-persimmon-orchard-sunny-day-growing-photographed-kerikeri-bay-islands-northland-new-zealand-nz-image74034971" alt="Persimmon Orchard">
-      <img src="https://www.gettyimages.com/detail/photo/rows-of-persimmon-trees-in-orchard-royalty-free-image/1280200963" alt="Rows of Trees">
-      <img src="https://www.istockphoto.com/photo/persimmons-in-persimmon-orchard-on-sunny-day-gm1216968456-354951872" alt="Harvesting">
+      <img src="https://www.dreamstime.com/stock-photo-persimmons-persimmon-orchard-sunny-day-growing-photographed-kerikeri-bay-islands-northland-new-zealand-nz-image74034971" alt="Sunlit persimmon trees">
+      <img src="https://www.gettyimages.com/detail/photo/rows-of-persimmon-trees-in-orchard-royalty-free-image/1280200963" alt="Rows of persimmon trees">
+      <img src="https://www.istockphoto.com/photo/persimmons-in-persimmon-orchard-on-sunny-day-gm1216968456-354951872" alt="Ripe persimmons on tree">
     </div>
   </section>
 
-  <section id="contact">
+  <section id="contact" class="section">
     <h2>Contact Us</h2>
     <div class="contact-info">
-      <a href="mailto:hunt-family@extra.co.nz">hunt-family@extra.co.nz</a>
-      <a href="tel:0210524661">0210 524 661</a>
-      <a href="https://www.facebook.com/ShiziyuanPersimmonGarden/" target="_blank">Facebook Page</a>
+      <a href="mailto:hunt-family@extra.co.nz">hunt-family@extra.co.nz</a><br/>
+      <a href="tel:0210524661">0210 524 661</a><br/>
+      <a href="https://www.facebook.com/ShiziyuanPersimmonGarden/" target="_blank">Visit us on Facebook</a>
     </div>
+
     <form action="mailto:hunt-family@extra.co.nz" method="POST" enctype="text/plain">
       <input type="text" name="name" placeholder="Your Name" required>
       <input type="email" name="email" placeholder="Your Email" required>
       <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-      <button type="submit">Send</button>
+      <button type="submit">Send Message</button>
     </form>
+
     <iframe
       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3172.5356361606924!2d174.44697231533398!3d-36.67222197997352!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d0c97a1614e9d05%3A0x7891262b6f34a6fc!2s152%20Rimmer%20Road%2C%20Helensville%200875%2C%20New%20Zealand!5e0!3m2!1sen!2snz!4v1713678750012!5m2!1sen!2snz"
-      width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      loading="lazy"
+      allowfullscreen>
+    </iframe>
   </section>
+
 </body>
 </html>
