@@ -2,128 +2,87 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Shiziyuan Persimmon Garden</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
     html {
       scroll-behavior: smooth;
     }
-
     body {
       margin: 0;
       font-family: 'Quicksand', sans-serif;
-      background-color: #fdf8f2;
+      background: url('https://images.unsplash.com/photo-1526045612212-70caf35c14df?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+      background-size: cover;
       color: #333;
     }
-
     header {
       background: linear-gradient(to right, #2a9d8f, #f4a261);
-      padding: 2.5rem 1rem;
+      padding: 1.5rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
       position: sticky;
       top: 0;
       z-index: 1000;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
     }
-
-    header h1 {
-      color: white;
-      margin: 0;
-      font-size: 2rem;
-    }
-
     nav ul {
       list-style: none;
       margin: 0;
       padding: 0;
       display: flex;
-      gap: 1.5rem;
+      gap: 1rem;
     }
-
     nav ul li a {
       text-decoration: none;
       color: white;
       font-weight: 600;
-      font-size: 1rem;
     }
-
+    h1 {
+      margin: 0;
+      color: white;
+      font-size: 1.4rem;
+    }
     section {
+      padding: 5rem 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
       background-size: cover;
       background-position: center;
-      padding: 6rem 2rem;
-      color: #fff;
-      position: relative;
+      background-repeat: no-repeat;
       text-align: center;
       opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 1s ease, transform 1s ease;
+      animation: fadeIn 1.5s ease-in-out forwards;
     }
-
-    section.visible {
-      opacity: 1;
-      transform: translateY(0);
+    section:nth-child(even) {
+      background-color: rgba(255,255,255,0.85);
     }
-
-    section::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.5);
-      z-index: 0;
-    }
-
-    section .content {
-      position: relative;
-      z-index: 1;
-      max-width: 800px;
-      margin: 0 auto;
-      background: rgba(255, 255, 255, 0.9);
-      color: #333;
+    .content {
+      background: white;
       padding: 2rem;
-      border-radius: 15px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      max-width: 800px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     }
-
-    h2 {
-      margin-top: 0;
-      color: #264653;
-    }
-
-    ul {
-      text-align: left;
-    }
-
-    .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1rem;
-    }
-
     .gallery img {
       width: 100%;
       max-width: 300px;
+      margin: 10px;
       border-radius: 10px;
     }
-
     .contact-info a {
       display: block;
       margin-bottom: 0.5rem;
-      color: #264653;
-      text-decoration: none;
+      color: #2a9d8f;
+      font-weight: 600;
     }
-
     form {
       margin-top: 2rem;
     }
-
     input, textarea {
       width: 100%;
       padding: 0.5rem;
@@ -132,7 +91,6 @@
       border: 1px solid #ccc;
       font-family: 'Quicksand', sans-serif;
     }
-
     button {
       background-color: #2a9d8f;
       color: white;
@@ -142,25 +100,19 @@
       border-radius: 5px;
       cursor: pointer;
     }
-
     button:hover {
       background-color: #21867a;
     }
-
-    iframe {
-      margin-top: 2rem;
-      border: 0;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
-      width: 100%;
-      height: 300px;
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
     }
   </style>
 </head>
 <body>
-
   <header>
-    <h1>Shiziyuan</h1>
+    <h1>Shiziyuan Persimmon Garden</h1>
     <nav>
       <ul>
         <li><a href="#home">Home</a></li>
@@ -175,7 +127,7 @@
   <section id="home" style="background-image: url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1950&q=80');">
     <div class="content">
       <h2>Welcome to Shiziyuan Persimmon Garden</h2>
-      <p>We’re excited to welcome you to our official website! Persimmon picking begins on April 25th, 2025—come and enjoy a peaceful day out in nature with your family and friends.</p>
+      <p>We’re excited to welcome you to our official website! Persimmon picking begins on April 25th, 2025 — come and enjoy a peaceful day out in nature with your family and friends.</p>
     </div>
   </section>
 
@@ -183,13 +135,13 @@
     <div class="content">
       <h2>About Our Garden</h2>
       <p>Nestled in the heart of Helensville, New Zealand, our Persimmon Garden on Rimmer Road offers a peaceful slice of countryside charm. Opening for the season on April 25th, the garden is a serene escape where nature and simplicity come together.</p>
-      <p>As you wander the property, you’ll find friendly ducks, cows, chickens, and even doves—creating a truly wholesome atmosphere. For those wanting a closer look, guided tours are available upon request.</p>
+      <p>As you wander the property, you’ll find friendly ducks, cows, chickens, and even doves — creating a truly wholesome atmosphere. For those wanting a closer look, guided tours are available upon request.</p>
     </div>
   </section>
 
   <section id="services" style="background-image: url('https://images.unsplash.com/photo-1620152256934-f5478781973a?auto=format&fit=crop&w=1950&q=80');">
     <div class="content">
-      <h2>Our Services</h2>
+      <h2>Services</h2>
       <ul>
         <li><strong>Persimmon Picking:</strong> Pick fresh persimmons straight from the tree and take home nature’s sweet bounty.</li>
         <li><strong>Animal Encounters:</strong> Get to know our farm animals including ducks, cows, chickens, and doves.</li>
@@ -217,6 +169,7 @@
         <a href="mailto:hunt-family@extra.co.nz">hunt-family@extra.co.nz</a>
         <a href="tel:0210524661">0210 524 661</a>
         <a href="https://www.facebook.com/ShiziyuanPersimmonGarden/" target="_blank">Facebook Page</a>
+        <a href="https://routetokiwi.blogspot.com/2018/10/shiziyuan-persimmon-garden-worth-to.html" target="_blank">Blog Post about our Garden</a>
       </div>
       <form action="mailto:hunt-family@extra.co.nz" method="POST" enctype="text/plain">
         <input type="text" name="name" placeholder="Your Name" required>
@@ -224,29 +177,8 @@
         <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
         <button type="submit">Send</button>
       </form>
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3172.5356361606924!2d174.44697231533398!3d-36.67222197997352!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d0c97a1614e9d05%3A0x7891262b6f34a6fc!2s152%20Rimmer%20Road%2C%20Helensville%200875%2C%20New%20Zealand!5e0!3m2!1sen!2snz!4v1713678750012!5m2!1sen!2snz">
-      </iframe>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3172.5356361606924!2d174.44697231533398!3d-36.67222197997352!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d0c97a1614e9d05%3A0x7891262b6f34a6fc!2s152%20Rimmer%20Road%2C%20Helensville%200875%2C%20New%20Zealand!5e0!3m2!1sen!2snz!4v1713678750012!5m2!1sen!2snz" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
     </div>
   </section>
-
-  <script>
-    const sections = document.querySelectorAll("section");
-
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-        }
-      });
-    }, {
-      threshold: 0.15
-    });
-
-    sections.forEach(section => {
-      observer.observe(section);
-    });
-  </script>
-
 </body>
 </html>
