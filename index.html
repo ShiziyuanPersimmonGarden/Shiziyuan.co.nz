@@ -14,7 +14,7 @@
     body {
       margin: 0;
       font-family: 'Quicksand', sans-serif;
-      background: url('https://images.unsplash.com/photo-1526045612212-70caf35c14df?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+      background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
       background-size: cover;
       color: #333;
     }
@@ -40,33 +40,18 @@
       color: white;
       font-weight: 600;
     }
-    h1 {
-      margin: 0;
-      color: white;
-      font-size: 1.4rem;
-    }
     section {
-      padding: 5rem 2rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      text-align: center;
-      opacity: 0;
-      animation: fadeIn 1.5s ease-in-out forwards;
+      padding: 4rem 2rem;
+      max-width: 75%;
+      margin: auto;
+      background-color: rgba(255, 255, 255, 0.95);
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      margin-top: 3rem;
+      animation: fadeIn 2s ease-in;
     }
-    section:nth-child(even) {
-      background-color: rgba(255,255,255,0.85);
-    }
-    .content {
-      background: white;
-      padding: 2rem;
-      max-width: 800px;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    h1, h2 {
+      color: #264653;
     }
     .gallery img {
       width: 100%;
@@ -77,8 +62,6 @@
     .contact-info a {
       display: block;
       margin-bottom: 0.5rem;
-      color: #2a9d8f;
-      font-weight: 600;
     }
     form {
       margin-top: 2rem;
@@ -104,15 +87,21 @@
       background-color: #21867a;
     }
     @keyframes fadeIn {
-      to {
-        opacity: 1;
-      }
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .section-img {
+      width: 100%;
+      max-height: 250px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 1rem;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Shiziyuan Persimmon Garden</h1>
+    <h1 style="color: white; margin: 0;">Shiziyuan Persimmon Garden</h1>
     <nav>
       <ul>
         <li><a href="#home">Home</a></li>
@@ -124,61 +113,57 @@
     </nav>
   </header>
 
-  <section id="home" style="background-image: url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1950&q=80');">
-    <div class="content">
-      <h2>Welcome to Shiziyuan Persimmon Garden</h2>
-      <p>We’re excited to welcome you to our official website! Persimmon picking begins on April 25th, 2025 — come and enjoy a peaceful day out in nature with your family and friends.</p>
+  <section id="home">
+    <img class="section-img" src="https://images.unsplash.com/photo-1570913149827-d2ac84ab3f1d?auto=format&fit=crop&w=1350&q=80" alt="Nature Welcome">
+    <h2>Welcome to Shiziyuan Persimmon Garden</h2>
+    <p>We’re excited to welcome you to our official website! Persimmon picking begins on April 25th, 2025—come and enjoy a peaceful day out in nature with your family and friends.</p>
+  </section>
+
+  <section id="about">
+    <img class="section-img" src="https://images.unsplash.com/photo-1615826881174-90061c64bfa0?auto=format&fit=crop&w=1350&q=80" alt="Farmland">
+    <h2>About Our Garden</h2>
+    <p>Nestled in the heart of Helensville, New Zealand, our Persimmon Garden on Rimmer Road offers a peaceful slice of countryside charm. Opening for the season on April 25th, the garden is a serene escape where nature and simplicity come together.</p>
+    <p>As you wander the property, you’ll find friendly ducks, cows, chickens, and even doves—creating a truly wholesome atmosphere. For those wanting a closer look, guided tours are available upon request.</p>
+  </section>
+
+  <section id="services">
+    <img class="section-img" src="https://images.unsplash.com/photo-1604988966815-e0fce72661a4?auto=format&fit=crop&w=1350&q=80" alt="Persimmon Picking">
+    <h2>Services</h2>
+    <ul>
+      <li><strong>Persimmon Picking:</strong> Pick fresh persimmons straight from the tree and take home nature’s sweet bounty.</li>
+      <li><strong>Animal Encounters:</strong> Get to know our farm animals including ducks, cows, chickens, and doves.</li>
+      <li><strong>Guided Tours:</strong> Explore the orchard and learn about our land with a guided walk (on request).</li>
+      <li><strong>Picnic Spaces:</strong> Enjoy a family picnic in a peaceful natural setting.</li>
+    </ul>
+  </section>
+
+  <section id="gallery">
+    <img class="section-img" src="https://images.unsplash.com/photo-1609522962153-177bc700c47d?auto=format&fit=crop&w=1350&q=80" alt="Sunset Orchard">
+    <h2>Gallery</h2>
+    <div class="gallery">
+      <img src="https://www.dreamstime.com/stock-photo-persimmons-persimmon-orchard-sunny-day-growing-photographed-kerikeri-bay-islands-northland-new-zealand-nz-image74034971" alt="Persimmon Orchard">
+      <img src="https://www.gettyimages.com/detail/photo/rows-of-persimmon-trees-in-orchard-royalty-free-image/1280200963" alt="Rows of Trees">
+      <img src="https://www.istockphoto.com/photo/persimmons-in-persimmon-orchard-on-sunny-day-gm1216968456-354951872" alt="Harvesting">
     </div>
   </section>
 
-  <section id="about" style="background-image: url('https://images.unsplash.com/photo-1616257990584-3b02d7e682b3?auto=format&fit=crop&w=1950&q=80');">
-    <div class="content">
-      <h2>About Our Garden</h2>
-      <p>Nestled in the heart of Helensville, New Zealand, our Persimmon Garden on Rimmer Road offers a peaceful slice of countryside charm. Opening for the season on April 25th, the garden is a serene escape where nature and simplicity come together.</p>
-      <p>As you wander the property, you’ll find friendly ducks, cows, chickens, and even doves — creating a truly wholesome atmosphere. For those wanting a closer look, guided tours are available upon request.</p>
+  <section id="contact">
+    <img class="section-img" src="https://images.unsplash.com/photo-1495592528441-aa32a1b1b1b6?auto=format&fit=crop&w=1350&q=80" alt="Contact Nature">
+    <h2>Contact Us</h2>
+    <div class="contact-info">
+      <a href="mailto:hunt-family@extra.co.nz">hunt-family@extra.co.nz</a>
+      <a href="tel:0210524661">0210 524 661</a>
+      <a href="https://www.facebook.com/ShiziyuanPersimmonGarden/" target="_blank">Facebook Page</a>
     </div>
-  </section>
-
-  <section id="services" style="background-image: url('https://images.unsplash.com/photo-1620152256934-f5478781973a?auto=format&fit=crop&w=1950&q=80');">
-    <div class="content">
-      <h2>Services</h2>
-      <ul>
-        <li><strong>Persimmon Picking:</strong> Pick fresh persimmons straight from the tree and take home nature’s sweet bounty.</li>
-        <li><strong>Animal Encounters:</strong> Get to know our farm animals including ducks, cows, chickens, and doves.</li>
-        <li><strong>Guided Tours:</strong> Explore the orchard and learn about our land with a guided walk (on request).</li>
-        <li><strong>Picnic Spaces:</strong> Enjoy a family picnic in a peaceful natural setting.</li>
-      </ul>
-    </div>
-  </section>
-
-  <section id="gallery" style="background-image: url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=1950&q=80');">
-    <div class="content">
-      <h2>Gallery</h2>
-      <div class="gallery">
-        <img src="https://www.dreamstime.com/stock-photo-persimmons-persimmon-orchard-sunny-day-growing-photographed-kerikeri-bay-islands-northland-new-zealand-nz-image74034971" alt="Persimmon Orchard">
-        <img src="https://www.gettyimages.com/detail/photo/rows-of-persimmon-trees-in-orchard-royalty-free-image/1280200963" alt="Rows of Trees">
-        <img src="https://www.istockphoto.com/photo/persimmons-in-persimmon-orchard-on-sunny-day-gm1216968456-354951872" alt="Harvesting">
-      </div>
-    </div>
-  </section>
-
-  <section id="contact" style="background-image: url('https://images.unsplash.com/photo-1526045612212-70caf35c14df?auto=format&fit=crop&w=1950&q=80');">
-    <div class="content">
-      <h2>Contact Us</h2>
-      <div class="contact-info">
-        <a href="mailto:hunt-family@extra.co.nz">hunt-family@extra.co.nz</a>
-        <a href="tel:0210524661">0210 524 661</a>
-        <a href="https://www.facebook.com/ShiziyuanPersimmonGarden/" target="_blank">Facebook Page</a>
-        <a href="https://routetokiwi.blogspot.com/2018/10/shiziyuan-persimmon-garden-worth-to.html" target="_blank">Blog Post about our Garden</a>
-      </div>
-      <form action="mailto:hunt-family@extra.co.nz" method="POST" enctype="text/plain">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-        <button type="submit">Send</button>
-      </form>
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3172.5356361606924!2d174.44697231533398!3d-36.67222197997352!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d0c97a1614e9d05%3A0x7891262b6f34a6fc!2s152%20Rimmer%20Road%2C%20Helensville%200875%2C%20New%20Zealand!5e0!3m2!1sen!2snz!4v1713678750012!5m2!1sen!2snz" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-    </div>
+    <form action="mailto:hunt-family@extra.co.nz" method="POST" enctype="text/plain">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3172.5356361606924!2d174.44697231533398!3d-36.67222197997352!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d0c97a1614e9d05%3A0x7891262b6f34a6fc!2s152%20Rimmer%20Road%2C%20Helensville%200875%2C%20New%20Zealand!5e0!3m2!1sen!2snz!4v1713678750012!5m2!1sen!2snz"
+      width="100%" height="300" style="border:0; margin-top: 2rem;" allowfullscreen="" loading="lazy"></iframe>
   </section>
 </body>
 </html>
