@@ -1,246 +1,229 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Shiziyuan Persimmon Garden | Helensville NZ</title>
 
-  <!-- SEO -->
-  <meta name="description" content="Visit Shiziyuan Persimmon Garden in Helensville, NZ. Pick fresh persimmons, enjoy animal encounters, guided tours and peaceful countryside experiences." />
-  <meta name="keywords" content="Persimmon Garden, Helensville, Fruit Picking NZ, Orchard, Family Activities" />
+  <!-- SEO / 2026 STANDARD -->
+  <meta name="description" content="Shiziyuan Persimmon Garden in Helensville NZ. Seasonal persimmon picking, family-friendly farm visits, animals, tours and nature experiences." />
+  <meta name="robots" content="index, follow" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --primary: #7c3aed; /* violet */
-      --secondary: #22c55e; /* green */
-      --dark: #0f172a;
-      --light: #ffffff;
-      --bg: #f8fafc;
+      --bg: #f9fafb;
       --card: #ffffff;
       --text: #0f172a;
+      --muted: #64748b;
+      --primary: #16a34a;
+      --accent: #22c55e;
+      --dark: #020617;
     }
 
     [data-theme="dark"] {
       --bg: #020617;
       --card: #020617;
       --text: #e5e7eb;
-      --primary: #a78bfa;
-      --secondary: #4ade80;
+      --muted: #94a3b8;
+      --primary: #4ade80;
+      --accent: #22c55e;
     }
 
     * { box-sizing: border-box; }
-
     html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
-      font-family: 'Quicksand', sans-serif;
-      color: var(--text);
+      font-family: 'Inter', sans-serif;
       background: var(--bg);
+      color: var(--text);
       transition: background .3s, color .3s;
     }
 
     /* HEADER */
     header {
-      backdrop-filter: blur(10px);
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: linear-gradient(90deg, var(--primary), var(--secondary));
-      padding: 1rem 2rem;
+      background: rgba(2,6,23,.75);
+      backdrop-filter: blur(14px);
       display: flex;
       justify-content: space-between;
       align-items: center;
+      padding: 1rem 2rem;
     }
 
     header h1 {
       font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
       color: white;
-      font-size: 1.6rem;
       margin: 0;
     }
 
-    nav ul {
-      list-style: none;
+    nav {
       display: flex;
-      gap: 1.2rem;
-      margin: 0;
-      padding: 0;
+      align-items: center;
+      gap: 1rem;
     }
 
     nav a {
       color: white;
       text-decoration: none;
-      font-weight: 700;
-      font-size: 1rem;
+      font-weight: 600;
+      font-size: .95rem;
     }
 
-    nav a:hover { text-decoration: underline; }
+    nav a:hover { opacity: .8; }
+
+    .toggle {
+      border: none;
+      border-radius: 999px;
+      padding: .4rem .8rem;
+      cursor: pointer;
+      font-weight: 600;
+    }
 
     /* HERO */
     .hero {
-      height: 85vh;
-      background: linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)),
+      min-height: 90vh;
+      background: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)),
         url('https://cdn.pixabay.com/photo/2021/10/23/19/29/persimmons-6743037_1280.jpg') center/cover no-repeat;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      display: grid;
+      place-items: center;
       text-align: center;
+      padding: 3rem 1.5rem;
       color: white;
-      padding: 2rem;
     }
 
     .hero h2 {
       font-family: 'Playfair Display', serif;
-      font-size: 3rem;
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
       margin-bottom: 1rem;
     }
 
     .hero p {
-      font-size: 1.3rem;
-      max-width: 700px;
-      margin: auto;
+      max-width: 720px;
+      font-size: 1.25rem;
+      line-height: 1.6;
     }
 
-    .hero button {
+    .cta {
       margin-top: 2rem;
-      padding: 0.9rem 2rem;
-      font-size: 1.1rem;
-      background: var(--secondary);
-      border: none;
-      border-radius: 30px;
-      cursor: pointer;
+      padding: .9rem 2.2rem;
+      font-size: 1.05rem;
       font-weight: 700;
+      border-radius: 999px;
+      border: none;
+      background: var(--accent);
+      cursor: pointer;
     }
 
-    .hero button:hover { background: #e38b4f; }
-
-    /* SECTIONS */
+    /* SECTION BASE */
     section {
-      max-width: 1100px;
-      margin: 4rem auto;
+      max-width: 1200px;
+      margin: 5rem auto;
+      padding: 0 1.5rem;
+    }
+
+    .section-box {
+      background: var(--card);
+      border-radius: 24px;
       padding: 3rem;
-      background: white;
-      border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(0,0,0,.1);
+      box-shadow: 0 20px 40px rgba(0,0,0,.08);
     }
 
-    section h2 {
+    h3 {
       font-family: 'Playfair Display', serif;
-      font-size: 2.2rem;
-      color: var(--dark);
-      margin-bottom: 1rem;
+      font-size: 2rem;
+      margin-top: 0;
     }
 
-    section p {
-      font-size: 1.1rem;
-      line-height: 1.7;
-    }
-
-    .section-img {
-      width: 100%;
-      height: 280px;
-      object-fit: cover;
-      border-radius: 12px;
-      margin-bottom: 1.5rem;
-    }
-
-    /* SERVICES GRID */
-    .services {
+    /* INFO GRID */
+    .info-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
-
-    .service-card {
-      background: #fafafa;
-      padding: 1.5rem;
-      border-radius: 12px;
-      box-shadow: 0 6px 16px rgba(0,0,0,.08);
-      transition: transform .3s;
-    }
-
-    .service-card:hover { transform: translateY(-6px); }
-
-    .service-card h3 { color: var(--primary); }
-
-    /* GALLERY */
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1rem;
-      margin-top: 2rem;
-    }
-
-    .gallery img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-      border-radius: 12px;
-    }
-
-    /* CONTACT */
-    .contact-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 2rem;
       margin-top: 2rem;
     }
 
-    .contact-info a {
-      display: block;
-      margin-bottom: .6rem;
-      font-weight: 600;
-      color: var(--primary);
-      text-decoration: none;
+    .info-card {
+      background: rgba(22,163,74,.05);
+      padding: 1.8rem;
+      border-radius: 18px;
     }
 
-    form input, form textarea {
+    /* SERVICES */
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .service {
+      padding: 2rem;
+      border-radius: 20px;
+      background: var(--card);
+      box-shadow: 0 12px 30px rgba(0,0,0,.1);
+    }
+
+    /* GALLERY */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+    }
+
+    .gallery img {
       width: 100%;
-      padding: .7rem;
-      margin-bottom: .7rem;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-      font-family: inherit;
+      height: 240px;
+      object-fit: cover;
+      border-radius: 18px;
+      cursor: pointer;
     }
 
-    form button {
+    /* CONTACT */
+    .contact {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: .8rem;
+      border-radius: 12px;
+      border: 1px solid #ccc;
+      margin-bottom: .7rem;
+    }
+
+    button.submit {
       width: 100%;
       padding: .9rem;
-      border-radius: 30px;
+      border-radius: 999px;
       border: none;
       background: var(--primary);
       color: white;
-      font-size: 1.1rem;
       font-weight: 700;
       cursor: pointer;
     }
 
-    form button:hover { background: #21867a; }
-
-    iframe { border-radius: 12px; }
-
-    /* FOOTER */
     footer {
-      background: var(--dark);
-      color: white;
+      margin-top: 6rem;
+      background: #020617;
+      color: #94a3b8;
       text-align: center;
-      padding: 2rem 1rem;
-      margin-top: 4rem;
+      padding: 3rem 1.5rem;
+      font-size: .9rem;
     }
 
-    footer p { margin: .3rem 0; font-size: .9rem; }
-
-    /* RESPONSIVE */
     @media (max-width: 768px) {
-      .hero h2 { font-size: 2.2rem; }
-      header { flex-direction: column; gap: .6rem; }
+      nav a { display: none; }
     }
   </style>
 </head>
@@ -249,91 +232,95 @@
 <header>
   <h1>Shiziyuan Persimmon Garden</h1>
   <nav>
-      <button id="themeToggle" aria-label="Toggle dark mode" style="margin-left:1rem;border:none;border-radius:999px;padding:.4rem .8rem;font-weight:700;cursor:pointer;background:white;color:black;">🌙</button>
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#gallery">Gallery</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#visit">Visit</a>
+    <button class="toggle" id="themeToggle">🌙</button>
   </nav>
 </header>
 
-<section class="hero" id="home">
+<section class="hero">
   <div>
-    <h2>Fresh Persimmons. Peaceful Countryside.</h2>
-    <p>Opening April 25th, 2025. Experience fruit picking, farm animals and nature at Shiziyuan Persimmon Garden, Helensville.</p>
-    <button onclick="document.getElementById('contact').scrollIntoView()">Plan Your Visit</button>
+    <h2>Seasonal Persimmon Picking in Helensville</h2>
+    <p>Open from April 25th each year. A peaceful, family-friendly orchard experience with fresh fruit, animals, and countryside views.</p>
+    <button class="cta" onclick="document.getElementById('visit').scrollIntoView()">Plan Your Visit</button>
   </div>
 </section>
 
 <section id="about">
-  <img class="section-img" src="https://images.unsplash.com/photo-1615826881174-90061c64bfa0?auto=format&fit=crop&w=1350&q=80" alt="Farm landscape">
-  <h2>About Our Garden</h2>
-  <p>Located on Rimmer Road, Helensville, Shiziyuan Persimmon Garden is a family-friendly orchard offering a calm countryside escape. Wander among fruit trees, meet friendly animals, and enjoy the beauty of nature.</p>
+  <div class="section-box">
+    <h3>About the Orchard</h3>
+    <p>Shiziyuan Persimmon Garden is a privately owned orchard on Rimmer Road, Helensville. We open seasonally for visitors who want to pick fruit, enjoy nature, and experience a working orchard.</p>
+
+    <div class="info-grid">
+      <div class="info-card"><strong>📍 Location</strong><br>Helensville, NZ</div>
+      <div class="info-card"><strong>🌿 Season</strong><br>April – June</div>
+      <div class="info-card"><strong>👨‍👩‍👧‍👦 Family Friendly</strong><br>All ages welcome</div>
+    </div>
+  </div>
 </section>
 
 <section id="services">
-  <h2>What We Offer</h2>
-  <div class="services">
-    <div class="service-card"><h3>Persimmon Picking</h3><p>Pick ripe persimmons straight from the tree.</p></div>
-    <div class="service-card"><h3>Animal Encounters</h3><p>Ducks, cows, chickens and doves for all ages.</p></div>
-    <div class="service-card"><h3>Guided Tours</h3><p>Learn about the orchard and land (on request).</p></div>
-    <div class="service-card"><h3>Picnic Areas</h3><p>Relax with family in peaceful surroundings.</p></div>
+  <div class="section-box">
+    <h3>What You Can Do</h3>
+    <div class="services">
+      <div class="service">🍊 Pick fresh persimmons</div>
+      <div class="service">🐓 Meet friendly farm animals</div>
+      <div class="service">🚶 Guided orchard walks</div>
+      <div class="service">🧺 Picnic and relax</div>
+    </div>
   </div>
 </section>
 
 <section id="gallery">
-  <h2>Gallery</h2>
-  <div class="gallery">
-    <img src="https://images.unsplash.com/photo-1604988966815-e0fce72661a4?auto=format&fit=crop&w=800&q=80" alt="Persimmons">
-    <img src="https://images.unsplash.com/photo-1570913149827-d2ac84ab3f1d?auto=format&fit=crop&w=800&q=80" alt="Orchard">
-    <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=800&q=80" alt="Farm">
+  <div class="section-box">
+    <h3>Gallery</h3>
+    <div class="gallery">
+      <img src="https://images.unsplash.com/photo-1604988966815-e0fce72661a4?auto=format&fit=crop&w=800&q=80">
+      <img src="https://images.unsplash.com/photo-1570913149827-d2ac84ab3f1d?auto=format&fit=crop&w=800&q=80">
+      <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=800&q=80">
+    </div>
   </div>
 </section>
 
-<section id="contact">
-  <h2>Contact & Location</h2>
-  <div class="contact-grid">
-    <div class="contact-info">
-      <a href="mailto:hunt-family@xtra.co.nz">hunt-family@xtra.co.nz</a>
-      <a href="tel:0210524661">021 052 4661</a>
-      <a href="https://www.facebook.com/ShiziyuanPersimmonGarden/" target="_blank">Facebook Page</a>
+<section id="visit">
+  <div class="section-box">
+    <h3>Plan Your Visit</h3>
+    <div class="contact">
+      <div>
+        <p><strong>Email:</strong> hunt-family@xtra.co.nz<br>
+        <strong>Phone:</strong> 021 052 4661</p>
+        <p><strong>Opening Hours:</strong><br>10am – 4pm (Seasonal)</p>
+      </div>
+      <form action="mailto:hunt-family@xtra.co.nz" method="POST" enctype="text/plain">
+        <input type="text" placeholder="Your name" required>
+        <input type="email" placeholder="Your email" required>
+        <textarea placeholder="Your message" rows="4" required></textarea>
+        <button class="submit">Send Message</button>
+      </form>
     </div>
-
-    <form action="mailto:hunt-family@xtra.co.nz" method="POST" enctype="text/plain">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
   </div>
-
-  <iframe
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3172.5356361606924!2d174.44697231533398!3d-36.67222197997352"
-    width="100%" height="300" loading="lazy" style="margin-top:2rem; border:0;">
-  </iframe>
 </section>
 
 <footer>
-  <p>© 2026 Shiziyuan Persimmon Garden</p>
-  <p>Helensville, New Zealand</p>
+  © 2026 Shiziyuan Persimmon Garden · Helensville, New Zealand
 </footer>
 
 <script>
   const toggle = document.getElementById('themeToggle');
   const root = document.documentElement;
 
-  const savedTheme = localStorage.getItem('theme');
-  if (savedTheme) root.setAttribute('data-theme', savedTheme);
+  const saved = localStorage.getItem('theme');
+  if (saved) root.setAttribute('data-theme', saved);
 
   toggle.onclick = () => {
-    const isDark = root.getAttribute('data-theme') === 'dark';
-    root.setAttribute('data-theme', isDark ? 'light' : 'dark');
-    localStorage.setItem('theme', isDark ? 'light' : 'dark');
-    toggle.textContent = isDark ? '🌙' : '☀️';
+    const dark = root.getAttribute('data-theme') === 'dark';
+    root.setAttribute('data-theme', dark ? 'light' : 'dark');
+    localStorage.setItem('theme', dark ? 'light' : 'dark');
+    toggle.textContent = dark ? '🌙' : '☀️';
   };
 </script>
+
 </body>
 </html>
