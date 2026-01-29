@@ -16,10 +16,21 @@
 
   <style>
     :root {
-      --primary: #2a9d8f;
-      --secondary: #f4a261;
-      --dark: #264653;
+      --primary: #7c3aed; /* violet */
+      --secondary: #22c55e; /* green */
+      --dark: #0f172a;
       --light: #ffffff;
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --text: #0f172a;
+    }
+
+    [data-theme="dark"] {
+      --bg: #020617;
+      --card: #020617;
+      --text: #e5e7eb;
+      --primary: #a78bfa;
+      --secondary: #4ade80;
     }
 
     * { box-sizing: border-box; }
@@ -29,12 +40,14 @@
     body {
       margin: 0;
       font-family: 'Quicksand', sans-serif;
-      color: #333;
-      background: #f7f7f7;
+      color: var(--text);
+      background: var(--bg);
+      transition: background .3s, color .3s;
     }
 
     /* HEADER */
     header {
+      backdrop-filter: blur(10px);
       position: sticky;
       top: 0;
       z-index: 1000;
@@ -236,6 +249,7 @@
 <header>
   <h1>Shiziyuan Persimmon Garden</h1>
   <nav>
+      <button id="themeToggle" aria-label="Toggle dark mode" style="margin-left:1rem;border:none;border-radius:999px;padding:.4rem .8rem;font-weight:700;cursor:pointer;background:white;color:black;">🌙</button>
     <ul>
       <li><a href="#home">Home</a></li>
       <li><a href="#about">About</a></li>
@@ -303,9 +317,23 @@
 </section>
 
 <footer>
-  <p>© 2025 Shiziyuan Persimmon Garden</p>
+  <p>© 2026 Shiziyuan Persimmon Garden</p>
   <p>Helensville, New Zealand</p>
 </footer>
 
+<script>
+  const toggle = document.getElementById('themeToggle');
+  const root = document.documentElement;
+
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme) root.setAttribute('data-theme', savedTheme);
+
+  toggle.onclick = () => {
+    const isDark = root.getAttribute('data-theme') === 'dark';
+    root.setAttribute('data-theme', isDark ? 'light' : 'dark');
+    localStorage.setItem('theme', isDark ? 'light' : 'dark');
+    toggle.textContent = isDark ? '🌙' : '☀️';
+  };
+</script>
 </body>
 </html>
