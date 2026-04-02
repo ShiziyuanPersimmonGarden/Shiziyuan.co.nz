@@ -85,32 +85,38 @@
       font-weight: 600;
     }
 
-    /* === HERO FULL-WIDTH FIX === */
+    /* === HERO SECTION FULL-WIDTH 16:9 === */
     .hero {
       position: relative;
-      width: 100vw;
-      height: 100vh;
+      width: 100%;
+      padding-top: 56.25%; /* 16:9 aspect ratio */
       background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)),
         url('orchard.jpg') center/cover no-repeat;
+    }
+
+    .hero > div {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 90%;
+      text-align: center;
+      color: white;
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
-      text-align: center;
-      padding: 0 1.5rem;
-      color: white;
     }
 
     .hero h2 {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-size: clamp(2rem, 6vw, 4rem);
       margin-bottom: 1rem;
       line-height: 1.2;
     }
 
     .hero p {
       max-width: 700px;
-      font-size: 1.3rem;
+      font-size: clamp(1rem, 4vw, 1.3rem);
       line-height: 1.6;
       margin-bottom: 1.5rem;
     }
@@ -123,12 +129,12 @@
       background: var(--accent);
       color: white;
       font-weight: 700;
-      font-size: 1rem;
+      font-size: clamp(.85rem, 3vw, 1rem);
     }
 
     .cta {
       padding: 1rem 2.5rem;
-      font-size: 1.1rem;
+      font-size: clamp(.9rem, 4vw, 1.1rem);
       font-weight: 700;
       border-radius: 999px;
       border: none;
@@ -235,8 +241,10 @@
 
     @media (max-width: 768px) {
       nav a { display: none; }
-      .hero h2 { font-size: 2rem; }
-      .hero p { font-size: 1rem; }
+      .hero h2 { font-size: clamp(1.8rem, 6vw, 3rem); }
+      .hero p { font-size: clamp(.9rem, 4vw, 1.2rem); }
+      .announcement { font-size: clamp(.8rem, 3vw, .95rem); }
+      .cta { font-size: clamp(.85rem, 4vw, 1rem); padding: .8rem 2rem; }
     }
   </style>
 </head>
@@ -256,13 +264,8 @@
 <section class="hero">
   <div>
     <h2>Seasonal Persimmon Picking in Helensville</h2>
-    <p>
-      A peaceful, family-friendly orchard experience with fresh fruit, animals, and countryside views.
-    </p>
-    <div class="announcement">
-      We're officially open for picking on the 18th of April 2026
-    </div>
-
+    <p>A peaceful, family-friendly orchard experience with fresh fruit, animals, and countryside views.</p>
+    <div class="announcement">We're officially open for picking on the 18th of April 2026</div>
     <button class="cta" onclick="document.getElementById('visit').scrollIntoView()">Plan Your Visit</button>
   </div>
 </section>
@@ -316,30 +319,15 @@
     <h3>Plan Your Visit</h3>
     <div class="contact">
       <div>
-        <p><strong>Address:</strong><br>
-        152 Rimmer Road, Helensville 0875</p>
-
-        <p><strong>Email:</strong> hunt-family@xtra.co.nz<br>
-        <strong>Phone:</strong> 021 052 4661</p>
-
+        <p><strong>Address:</strong><br>152 Rimmer Road, Helensville 0875</p>
+        <p><strong>Email:</strong> hunt-family@xtra.co.nz<br><strong>Phone:</strong> 021 052 4661</p>
         <p><strong>Opening Hours:</strong><br>10am – 4pm (Seasonal)</p>
 
         <div style="margin-top:1rem; border-radius:16px; overflow:hidden;">
-          <iframe
-            src="https://www.google.com/maps?q=152+Rimmer+Road,+Helensville+0875,+New+Zealand&output=embed"
-            width="100%"
-            height="300"
-            style="border:0;"
-            allowfullscreen=""
-            loading="lazy">
-          </iframe>
+          <iframe src="https://www.google.com/maps?q=152+Rimmer+Road,+Helensville+0875,+New+Zealand&output=embed" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
 
-        <a href="https://www.google.com/maps/dir/?api=1&destination=152+Rimmer+Road,+Helensville+0875"
-        target="_blank"
-        style="display:inline-block;margin-top:1rem;padding:.7rem 1.6rem;border-radius:999px;background:var(--accent);color:white;font-weight:600;text-decoration:none;">
-          Get Directions
-        </a>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=152+Rimmer+Road,+Helensville+0875" target="_blank" style="display:inline-block;margin-top:1rem;padding:.7rem 1.6rem;border-radius:999px;background:var(--accent);color:white;font-weight:600;text-decoration:none;">Get Directions</a>
       </div>
 
       <form action="mailto:hunt-family@xtra.co.nz" method="POST" enctype="text/plain">
