@@ -40,6 +40,7 @@
       font-family: 'Inter', sans-serif;
       background: var(--bg);
       color: var(--text);
+      transition: background .3s, color .3s;
     }
 
     header {
@@ -74,12 +75,20 @@
       font-size: .95rem;
     }
 
+    nav a:hover { opacity: .8; }
+
+    .toggle {
+      border: none;
+      border-radius: 999px;
+      padding: .4rem .8rem;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
     .hero {
       min-height: 90vh;
-      background: 
-        linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)),
-        url('orchard.jpg') center/cover no-repeat;
-      background-attachment: fixed;
+      background: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)),
+        url('https://cdn.pixabay.com/photo/2021/10/23/19/29/persimmons-6743037_1280.jpg') center/cover no-repeat;
       display: grid;
       place-items: center;
       text-align: center;
@@ -97,17 +106,6 @@
       max-width: 720px;
       font-size: 1.25rem;
       line-height: 1.6;
-    }
-
-    .announcement {
-      margin-top: 1rem;
-      display: inline-block;
-      padding: .6rem 1.4rem;
-      border-radius: 999px;
-      background: var(--accent);
-      color: white;
-      font-weight: 700;
-      font-size: .95rem;
     }
 
     .cta {
@@ -137,6 +135,7 @@
     h3 {
       font-family: 'Playfair Display', serif;
       font-size: 2rem;
+      margin-top: 0;
     }
 
     .info-grid {
@@ -177,6 +176,7 @@
       height: 240px;
       object-fit: cover;
       border-radius: 18px;
+      cursor: pointer;
     }
 
     .contact {
@@ -201,6 +201,7 @@
       background: var(--primary);
       color: white;
       font-weight: 700;
+      cursor: pointer;
     }
 
     footer {
@@ -210,6 +211,10 @@
       text-align: center;
       padding: 3rem 1.5rem;
       font-size: .9rem;
+    }
+
+    @media (max-width: 768px) {
+      nav a { display: none; }
     }
   </style>
 </head>
@@ -222,6 +227,7 @@
     <a href="#services">Services</a>
     <a href="#gallery">Gallery</a>
     <a href="#visit">Visit</a>
+    <button class="toggle" id="themeToggle">🌙</button>
   </nav>
 </header>
 
@@ -229,11 +235,6 @@
   <div>
     <h2>Seasonal Persimmon Picking in Helensville</h2>
     <p>Open from April 25th each year. A peaceful, family-friendly orchard experience with fresh fruit, animals, and countryside views.</p>
-
-    <div class="announcement">
-      We're open for picking on the 18th of April 2026
-    </div>
-
     <button class="cta" onclick="document.getElementById('visit').scrollIntoView()">Plan Your Visit</button>
   </div>
 </section>
@@ -241,7 +242,7 @@
 <section id="about">
   <div class="section-box">
     <h3>About the Orchard</h3>
-    <p>Shiziyuan Persimmon Garden is a privately owned orchard on Rimmer Road, Helensville. We open seasonally for visitors who want to pick fruit and enjoy nature.</p>
+    <p>Shiziyuan Persimmon Garden is a privately owned orchard on Rimmer Road, Helensville. We open seasonally for visitors who want to pick fruit, enjoy nature, and experience a working orchard.</p>
 
     <div class="info-grid">
       <div class="info-card"><strong>📍 Location</strong><br>152 Rimmer Road, Helensville 0875</div>
@@ -251,23 +252,96 @@
   </div>
 </section>
 
+<section id="services">
+  <div class="section-box">
+    <h3>What You Can Do</h3>
+    <div class="services">
+      <div class="service">🍊 Pick fresh persimmons</div>
+      <div class="service">🐓 Meet friendly farm animals</div>
+      <div class="service">🚶 Guided orchard walks</div>
+      <div class="service">🧺 Picnic and relax</div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="section-box">
+    <h3>Gallery</h3>
+    <p>See real photos and videos from visitors at Shiziyuan Persimmon Garden.</p>
+
+    <div class="gallery">
+      <img src="https://images.unsplash.com/photo-1604988966815-e0fce72661a4?auto=format&fit=crop&w=800&q=80" alt="Persimmons">
+      <img src="https://images.unsplash.com/photo-1570913149827-d2ac84ab3f1d?auto=format&fit=crop&w=800&q=80" alt="Orchard">
+      <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=800&q=80" alt="Farm">
+    </div>
+
+    <div style="margin-top:2rem; text-align:center;">
+      <a href="https://www.instagram.com/explore/locations/1382909545102946/shiziyuan-persimmon-garden/" target="_blank" style="display:inline-block;padding:1rem 2.4rem;border-radius:999px;background:var(--primary);color:white;font-weight:700;text-decoration:none;font-size:1rem;">
+        View Full Gallery on Instagram
+      </a>
+    </div>
+  </div>
+</section>
+
 <section id="visit">
   <div class="section-box">
     <h3>Plan Your Visit</h3>
+    <div class="contact">
+      <div>
+        <p><strong>Address:</strong><br>
+        152 Rimmer Road, Helensville 0875</p>
 
-    <iframe
-      src="https://www.google.com/maps?q=152+Rimmer+Road,+Helensville+0875,+New+Zealand&output=embed"
-      width="100%"
-      height="350"
-      style="border:0;border-radius:16px;"
-      loading="lazy">
-    </iframe>
+        <p><strong>Email:</strong> hunt-family@xtra.co.nz<br>
+        <strong>Phone:</strong> 021 052 4661</p>
+
+        <p><strong>Opening Hours:</strong><br>10am – 4pm (Seasonal)</p>
+
+        <div style="margin-top:1rem; border-radius:16px; overflow:hidden;">
+          <iframe
+            src="https://www.google.com/maps?q=152+Rimmer+Road,+Helensville+0875,+New+Zealand&output=embed"
+            width="100%"
+            height="300"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy">
+          </iframe>
+        </div>
+
+        <a href="https://www.google.com/maps/dir/?api=1&destination=152+Rimmer+Road,+Helensville+0875"
+        target="_blank"
+        style="display:inline-block;margin-top:1rem;padding:.7rem 1.6rem;border-radius:999px;background:var(--accent);color:white;font-weight:600;text-decoration:none;">
+          Get Directions
+        </a>
+      </div>
+
+      <form action="mailto:hunt-family@xtra.co.nz" method="POST" enctype="text/plain">
+        <input type="text" placeholder="Your name" required>
+        <input type="email" placeholder="Your email" required>
+        <textarea placeholder="Your message" rows="4" required></textarea>
+        <button class="submit">Send Message</button>
+      </form>
+    </div>
   </div>
 </section>
 
 <footer>
   © 2026 Shiziyuan Persimmon Garden · Helensville, New Zealand
 </footer>
+
+<script>
+  const toggle = document.getElementById('themeToggle');
+  const root = document.documentElement;
+
+  const saved = localStorage.getItem('theme');
+  if (saved) root.setAttribute('data-theme', saved);
+
+  toggle.onclick = () => {
+    const dark = root.getAttribute('data-theme') === 'dark';
+    root.setAttribute('data-theme', dark ? 'light' : 'dark');
+    localStorage.setItem('theme', dark ? 'light' : 'dark');
+    toggle.textContent = dark ? '🌙' : '☀️';
+  };
+</script>
 
 </body>
 </html>
