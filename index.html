@@ -85,23 +85,36 @@
       font-weight: 600;
     }
 
-    /* === HERO SECTION FULL-WIDTH 16:9 === */
+    /* HERO SECTION */
     .hero {
       position: relative;
       width: 100%;
-      padding-top: 56.25%; /* 16:9 aspect ratio */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
       background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)),
-        url('orchard.jpg') center/cover no-repeat;
+                  url('orchard.jpg') center/cover no-repeat;
+    }
+
+    /* Desktop: tall hero */
+    @media (min-width: 769px) {
+      .hero { height: 100vh; }
+      .hero > div { width: 60%; }
+    }
+
+    /* Mobile: square hero */
+    @media (max-width: 768px) {
+      .hero {
+        height: 100vw; /* 1:1 square */
+      }
+      .hero > div {
+        width: 90%;
+      }
     }
 
     .hero > div {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 90%;
-      text-align: center;
-      color: white;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -241,10 +254,6 @@
 
     @media (max-width: 768px) {
       nav a { display: none; }
-      .hero h2 { font-size: clamp(1.8rem, 6vw, 3rem); }
-      .hero p { font-size: clamp(.9rem, 4vw, 1.2rem); }
-      .announcement { font-size: clamp(.8rem, 3vw, .95rem); }
-      .cta { font-size: clamp(.85rem, 4vw, 1rem); padding: .8rem 2rem; }
     }
   </style>
 </head>
