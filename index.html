@@ -85,41 +85,34 @@
       font-weight: 600;
     }
 
-    /* Hero Section */
+    /* === HERO UPDATED === */
     .hero {
       position: relative;
       min-height: 90vh;
       background: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)),
-        url('https://cdn.pixabay.com/photo/2021/10/23/19/29/persimmons-6743037_1280.jpg') center/cover no-repeat;
+        url('orchard.jpg') center/cover no-repeat;
       display: grid;
       place-items: center;
       padding: 3rem 1.5rem;
       color: white;
     }
 
-    .hero-text {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 90%;
-      max-width: 720px;
-      text-align: center;
-    }
-
-    .hero-text h2 {
+    .hero h2 {
       font-family: 'Playfair Display', serif;
       font-size: clamp(2.2rem, 5vw, 3.5rem);
       margin-bottom: 1rem;
+      text-align: center;
     }
 
-    .hero-text p {
+    .hero p {
+      max-width: 720px;
       font-size: 1.25rem;
       line-height: 1.6;
-      margin-bottom: 1.5rem;
+      text-align: center;
     }
 
     .announcement {
+      margin-top: 1rem;
       display: inline-block;
       padding: .6rem 1.4rem;
       border-radius: 999px;
@@ -127,10 +120,10 @@
       color: white;
       font-weight: 700;
       font-size: .95rem;
-      margin-bottom: 1.5rem;
     }
 
     .cta {
+      margin-top: 2rem;
       padding: .9rem 2.2rem;
       font-size: 1.05rem;
       font-weight: 700;
@@ -252,9 +245,8 @@
   </nav>
 </header>
 
-<!-- HERO SECTION -->
 <section class="hero">
-  <div class="hero-text">
+  <div>
     <h2>Seasonal Persimmon Picking in Helensville</h2>
     <p>
       A peaceful, family-friendly orchard experience with fresh fruit, animals, and countryside views.
@@ -262,11 +254,11 @@
     <div class="announcement">
       We're officially open for picking on the 18th of April 2026
     </div>
+
     <button class="cta" onclick="document.getElementById('visit').scrollIntoView()">Plan Your Visit</button>
   </div>
 </section>
 
-<!-- ABOUT -->
 <section id="about">
   <div class="section-box">
     <h3>About the Orchard</h3>
@@ -280,7 +272,6 @@
   </div>
 </section>
 
-<!-- SERVICES -->
 <section id="services">
   <div class="section-box">
     <h3>What You Can Do</h3>
@@ -293,11 +284,16 @@
   </div>
 </section>
 
-<!-- GALLERY -->
 <section id="gallery">
   <div class="section-box">
     <h3>Gallery</h3>
     <p>See real photos and videos from visitors at Shiziyuan Persimmon Garden.</p>
+
+    <div class="gallery">
+      <img src="https://images.unsplash.com/photo-1604988966815-e0fce72661a4?auto=format&fit=crop&w=800&q=80" alt="Persimmons">
+      <img src="https://images.unsplash.com/photo-1570913149827-d2ac84ab3f1d?auto=format&fit=crop&w=800&q=80" alt="Orchard">
+      <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=800&q=80" alt="Farm">
+    </div>
 
     <div style="margin-top:2rem; text-align:center;">
       <a href="https://www.instagram.com/explore/locations/1382909545102946/shiziyuan-persimmon-garden/" target="_blank" style="display:inline-block;padding:1rem 2.4rem;border-radius:999px;background:var(--primary);color:white;font-weight:700;text-decoration:none;font-size:1rem;">
@@ -307,7 +303,6 @@
   </div>
 </section>
 
-<!-- VISIT -->
 <section id="visit">
   <div class="section-box">
     <h3>Plan Your Visit</h3>
